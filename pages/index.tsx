@@ -3,11 +3,12 @@ import type { NextPage } from 'next';
 import requests from '../src/requests';
 import Row from '../components/Row/Row';
 import Banner from '../components/Banner/Banner';
+import Nav from '../components/Nav/Nav';
 
 const Home: NextPage = () => {
 	return (
 		<div className="app">
-			{/* Navbar */}
+			<Nav />
 			<Banner />
 			<Row
 				title="NETFLIX ORIGINALS"
