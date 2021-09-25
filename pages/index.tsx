@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
-import Row from '../components/Row/Row';
+
 import requests from '../src/requests';
+import Row from '../components/Row/Row';
+import Banner from '../components/Banner/Banner';
 
 const Home: NextPage = () => {
 	return (
 		<div className="app">
-			<h1>Netflix Clone</h1>
+			{/* Navbar */}
+			<Banner />
 			<Row
 				title="NETFLIX ORIGINALS"
 				fetchUrl={requests.fetchNetflixOriginals}

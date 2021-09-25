@@ -39,7 +39,6 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 
 			<div className="row__posters">
 				{movies.map((movie) => (
-					// <Image src={`${base_url}${movie.poster_path}`} alt={movie.name} />
 					<img
 						key={movie.id}
 						className={`row__poster  ${isLargeRow && 'row__posterLarge'}`}
