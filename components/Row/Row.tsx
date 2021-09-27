@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
-import movieTrailer from 'movie-trailer';
+const movieTrailer = require('movie-trailer');
 
 import axiosInstance from '../../src/axios';
 import { MovieType, DataMovieType } from '../../types/types';
