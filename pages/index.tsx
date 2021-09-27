@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
 import requests from '../src/requests';
 import Row from '../components/Row/Row';
@@ -8,6 +9,10 @@ import Nav from '../components/Nav/Nav';
 const Home: NextPage = () => {
 	return (
 		<div className="app">
+			<Head>
+				<title>Netflix Clone</title>
+				<meta name="description" content="Netflix Clone" />
+			</Head>
 			<Nav />
 			<Banner />
 			<Row
