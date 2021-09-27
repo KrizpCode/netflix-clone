@@ -2,20 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import axiosInstance from '../../src/axios';
 import requests from '../../src/requests';
-
-interface MovieType {
-	id: number;
-	name: string;
-	poster_path: string;
-	backdrop_path: string;
-	original_name: string;
-	title: string;
-	overview: string;
-}
-
-interface DataMovieType {
-	results: MovieType[];
-}
+import { MovieType, DataMovieType } from '../../types/types';
 
 const Banner = () => {
 	const [movie, setMovie] = useState<MovieType | undefined>();

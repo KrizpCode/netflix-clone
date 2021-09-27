@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../../src/axios';
-import Image from 'next/image';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+
+import axiosInstance from '../../src/axios';
+import { MovieType, DataMovieType } from '../../types/types';
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -10,20 +11,6 @@ interface Props {
 	title: string;
 	fetchUrl: string;
 	isLargeRow?: boolean;
-}
-
-interface MovieType {
-	id: number;
-	name: string;
-	poster_path: string;
-	backdrop_path: string;
-	original_name: string;
-	title: string;
-	overview: string;
-}
-
-interface DataMovieType {
-	results: MovieType[];
 }
 
 const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
@@ -40,8 +27,8 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 	}, [fetchUrl]);
 
 	const opts = {
-		height: '390',
-		width: '640',
+		// height: '100%',
+		width: '100%',
 		playerVars: {
 			autoplay: 1,
 		},
