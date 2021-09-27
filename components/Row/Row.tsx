@@ -21,7 +21,6 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 		const fetchData = async () => {
 			const request = await axiosInstance.get<DataMovieType>(fetchUrl);
 			setMovies(request.data.results);
-			console.log(request.data.results);
 			return request;
 		};
 		fetchData();
