@@ -29,9 +29,6 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 	const opts = {
 		// height: '100%',
 		width: '100%',
-		playerVars: {
-			autoplay: 1,
-		},
 	};
 
 	const handleClick = (movie: MovieType) => {
