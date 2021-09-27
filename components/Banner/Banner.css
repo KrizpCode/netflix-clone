@@ -23,6 +23,7 @@
 	font-weight: 800;
 	padding-bottom: 0.3rem;
 	margin-right: 30px;
+	max-width: 360px;
 }
 
 .banner__description {
