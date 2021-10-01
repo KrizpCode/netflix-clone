@@ -28,6 +28,9 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 
 	const opts = {
 		width: '100%',
+		playerVars: {
+			autoplay: 1,
+		},
 	};
 
 	const handleClick = (movie: MovieType) => {
@@ -42,7 +45,7 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 						setTrailerUrl(trailerUrlParam);
 					}
 				})
-				.catch((error: Error) => console.log(error));
+				.catch((error: Error) => console.log(error.message));
 		}
 	};
 
