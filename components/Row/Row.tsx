@@ -28,13 +28,6 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 		fetchData();
 	}, [fetchUrl]);
 
-	const opts = {
-		width: '100%',
-		playerVars: {
-			autoplay: 1,
-		},
-	};
-
 	const handleClick = (movie: MovieType) => {
 		if (trailerUrl) {
 			setTrailerUrl('');
@@ -89,7 +82,17 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 					}
 				})}
 			</div>
-			{trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+			{trailerUrl && (
+				<YouTube
+					videoId={trailerUrl}
+					opts={{
+						width: '100%',
+						playerVars: {
+							autoplay: 1,
+						},
+					}}
+				/>
+			)}
 		</div>
 	);
 };
