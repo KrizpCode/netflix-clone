@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
 const movieTrailer = require('movie-trailer');
 
+import Image from 'next/image';
+
 import axiosInstance from '../../src/axios';
 import { MovieType, DataMovieType } from '../../types/types';
 
@@ -60,15 +62,29 @@ const Row: React.FC<Props> = ({ title, fetchUrl, isLargeRow }) => {
 						(!isLargeRow && movie.backdrop_path)
 					) {
 						return (
-							<img
-								key={movie.id}
-								onClick={() => handleClick(movie)}
-								className={`row__poster  ${isLargeRow && 'row__posterLarge'}`}
-								src={`${base_url}${
-									isLargeRow ? movie.poster_path : movie.backdrop_path
-								}`}
-								alt={movie.name}
-							/>
+							<div>
+								<div
+									key={movie.id}
+									className="row__posters-wrapper"
+									style={{
+										width: isLargeRow ? 170 : 178,
+										height: isLargeRow ? 250 : 100,
+									}}
+								>
+									<Image
+										key={movie.id}
+										onClick={() => handleClick(movie)}
+										className={`row__poster  ${
+											isLargeRow && 'row__posterLarge'
+										}`}
+										src={`${base_url}${
+											isLargeRow ? movie.poster_path : movie.backdrop_path
+										}`}
+										alt={movie.name}
+										layout="fill"
+									/>
+								</div>
+							</div>
 						);
 					}
 				})}
